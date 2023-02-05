@@ -71,7 +71,7 @@ const Home = () => {
    
     weatherData && updateCards(weatherData)
     
-  }, [weatherData, updateCards]);
+  }, [weatherData]);
 
   const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.keyCode === 13) {
