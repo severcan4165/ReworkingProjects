@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddExpenses from '../components/AddExpenses'
 import "./home.css";
 import Budget from '../components/Budget'
