@@ -29,6 +29,7 @@ const Budget = ({
             disabled={!toggleBudget}
             type="number"
             onChange={(e) => setTempBudget(parseInt(e.target.value))}
+            placeholder="Type your budget here !"
           />
           <button className="btn btn-primary w-25" onClick={handleBudget}>
             {toggleBudget ? "Save" : "Edit"}
