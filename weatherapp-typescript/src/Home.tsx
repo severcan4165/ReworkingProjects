@@ -1,5 +1,4 @@
-import React, {
-  ChangeEvent,
+import {
   FormEvent,
   KeyboardEvent,
   useEffect,
@@ -57,7 +56,7 @@ const Home = () => {
       temp.unshift(info);
       setCards(temp);
     }
-    else if(cards && cards.length == 5){
+    else if(cards && cards.length === 5){
       const temp = [...cards];
       temp.pop();
       temp.unshift(info)
@@ -72,7 +71,7 @@ const Home = () => {
    
     weatherData && updateCards(weatherData)
     
-  }, [weatherData]);
+  }, [weatherData, updateCards]);
 
   const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.keyCode === 13) {
