@@ -60,7 +60,7 @@ const Home = () => {
 
   useEffect(() => {
    updateCards(weatherData)
-  },[weatherData, updateCards])
+  },[weatherData])
   
 
   const handleEnter = (e) =>{
