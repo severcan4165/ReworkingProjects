@@ -1,5 +1,5 @@
-import React, { SetStateAction, useState } from "react";
-import { CLIENT_RENEG_LIMIT } from "tls";
+import React, { SetStateAction } from "react";
+
 interface IEdit {
   editItem: ExpenseType;
   expenseList: ExpenseType[];

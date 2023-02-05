@@ -18,9 +18,7 @@ const Budget = ({
     setToggleBudget(!toggleBudget);
   };
   let total;
-  {
-    total = expenseList?.reduce((a, b) => a + b.expenseCost, 0);
-  }
+  total = expenseList?.reduce((a, b) => a + b.expenseCost, 0) 
   return (
     <>
       <h1 className="text-center mb-3" style={{color:"#004e92"}}>My Budget Planner</h1>
