@@ -20,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(setMealList())
-  }, [dispatch, setMealList])
+  }, [])
   
 
 
