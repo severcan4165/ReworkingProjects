@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Flex } from "../../styles/Flex.styled";
 export const FlexCardDiv = styled.div`
     display: flex;
     justify-content: center;

@@ -29,7 +29,7 @@ const {signIn, handleGoogleSignIn, userObserver} = useAuthCalls();
   }
   useEffect(() => {
     userObserver(setUser)
-  }, [])
+  }, [userObserver,setUser])
   
 
 
