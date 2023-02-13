@@ -1,21 +1,19 @@
-
+import  TextField  from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import { Formik, Form } from 'formik'
+import * as yup from "yup";
+import { useAuthCalls } from '../hooks/useAuthCalls';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Formik, Form } from 'formik'
-import * as yup from "yup";
-import { useAuthCalls } from '../hooks/useAuthCalls';
-// import LoadingButton from "@mui/lab/LoadingButton";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -45,10 +43,8 @@ function Copyright(props: any) {
   );
 }
 const theme = createTheme();
-
-
-const Login = () => {
-  const { SignIn } = useAuthCalls();
+const Register = () => {
+  const {SignUp} = useAuthCalls();
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -57,7 +53,7 @@ const Login = () => {
           item
           xs={false}
           sm={4}
-          md={9}
+          md={7}
           sx={{
             backgroundImage: 'url(https://source.unsplash.com/featured/?movie)',
             backgroundRepeat: 'no-repeat',
@@ -67,7 +63,7 @@ const Login = () => {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={3} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <Box
             sx={{
               my: 8,
@@ -81,69 +77,65 @@ const Login = () => {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign Up
             </Typography>
       <Formik
-        initialValues={{ email: "", password: "" }}
-        validationSchema={loginSchema}
-        onSubmit={(values, actions) => {
-          SignIn(values.email, values.password);
-          actions.resetForm();
-          actions.setSubmitting(false);
-        }}
+      initialValues={{email:"",password:""}}
+      validationSchema={loginSchema}
+      onSubmit={(values,actions)=>{
+        SignUp(values.email, values.password);
+        actions.resetForm();
+        actions.setSubmitting(false);
+      }}
       >
-        {({ values, isSubmitting, handleChange, touched, errors, handleBlur }) => (
+        {({values, isSubmitting, handleChange, touched, errors, handleBlur}) =>(
           <Form>
             <Box>
               <TextField
-              margin="normal"
-              required
-              fullWidth
-              autoComplete="email"
-              autoFocus
-                label="Email Address"
-                name="email"
-                id="email"
-                type="email"
-                variant="outlined"
-                value={values.email}
-                onBlur={handleBlur}
-                onChange={handleChange}
-                error={touched.email && Boolean(errors.email)}
-                helperText={touched.email && errors.email}
+                   margin="normal"
+                   required
+                   fullWidth
+                   autoComplete="email"
+                   autoFocus
+              label="Email"
+              name="email"
+              id="email"
+              type="email"
+              variant="outlined"
+              value={values.email}
+              onBlur = {handleBlur}
+              onChange={handleChange}
+              error = {touched.email && Boolean(errors.email)}
+              helperText = {touched.email && errors.email}
               />
               <TextField
-               margin="normal"
-               required
-               fullWidth
-               autoComplete="current-password"
-                label="Password"
-                name="password"
-                id="password"
-                type="password"
-                variant="outlined"
-                value={values.password}
-                onBlur={handleBlur}
-                onChange={handleChange}
-                error={touched.password && Boolean(errors.password)}
-                helperText={touched.password && errors.password}
+                  margin="normal"
+                  required
+                  fullWidth
+                  autoComplete="current-password"
+              label="Password"
+              name="password"
+              id="password"
+              type="password"
+              variant="outlined"
+              value={values.password}
+              onBlur = {handleBlur}
+              onChange={handleChange}
+              error = {touched.password && Boolean(errors.password)}
+              helperText = {touched.password && errors.password}
               />
-                  {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              /> */}
               <Button
-                type="submit"
-                fullWidth
-                variant="contained">
-                Sign In
+                  type="submit"
+                  fullWidth
+                  variant="contained">
+            Sign Up
               </Button>
-
+           
             </Box>
 
           </Form>
-        )}
-
+        ) }
+        
       </Formik>
       <Grid container>
                 <Grid item xs>
@@ -152,8 +144,8 @@ const Login = () => {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/register" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link href="/login" variant="body2">
+                    {"Already have an account? Sign in"}
                   </Link>
                 </Grid>
               </Grid>
@@ -165,4 +157,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register

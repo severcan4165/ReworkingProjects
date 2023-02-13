@@ -1,14 +1,24 @@
-import React from 'react'
-import {Link} from "react-router-dom"
+import  Grid  from "@mui/material/Grid";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <>
-    <Link to="/">Home</Link>
-    <Link to="/login">Login</Link>
-    <Link to="/register">Register</Link>
-    </>
-  )
-}
+    <Grid container direction="row"
+    justifyContent="center"
+    alignItems="center" spacing={2}>
+      <Grid item xs={12} lg={3}>
+        <Link to="/">Home</Link>
+      </Grid>
+      <Grid item xs={12} lg={3}>
+      <Link to="/login">Login</Link>
+        
+      </Grid>
+      <Grid item xs={12} lg={3}>
+      <Link to="/register">Register</Link>
+      </Grid>
+    </Grid>
+  );
+};
 
-export default Navbar
+export default Navbar;
