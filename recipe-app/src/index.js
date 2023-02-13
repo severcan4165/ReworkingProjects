@@ -16,5 +16,3 @@ root.render(
 );
 
 
-// https://api.edamam.com/api/recipes/v2?type=public&q=kebap&app_id=62e033a5&app_key=729cb6811ead0fa9946909da75941584
-// https://api.edamam.com/api/recipes/v2?type=public&q=kebap&app_id=62e033a5&app_key=729cb6811ead0fa9946909da75941584
